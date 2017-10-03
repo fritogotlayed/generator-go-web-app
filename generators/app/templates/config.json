@@ -1,0 +1,6 @@
+{
+  "Web": {
+    "Port": 8080,
+    "TemplateBaseDir": "static/templates/"
+  }
+}
