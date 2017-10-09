@@ -12,9 +12,10 @@ func NewRouter() *mux.Router {
 		var handler http.Handler
 
 		handler = route.Handler
+		handler = OptionsHandler(handler)
 		handler = LogHandler(handler, route.Name)
 
-		router.Methods(route.Method).Path(route.Pattern).Name(route.Name).Handler(handler)
+		router.Methods(route.Method, "OPTOINS").Path(route.Pattern).Name(route.Name).Handler(handler)
 	}
 
 	// TODO: If the resources ever get embedded this needs to change.
